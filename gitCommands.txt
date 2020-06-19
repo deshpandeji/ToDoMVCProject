@@ -10,6 +10,8 @@ java -jar jenkins.war -httpPort=8080 --enable-future-java
 
  git commit -m "Notes about changes"
 
+ git remote add origin https://github.com/deshpandeji/ToDoMVCProject.git
+
  git push -u origin master
 
  
