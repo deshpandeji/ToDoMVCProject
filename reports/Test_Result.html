@@ -73,10 +73,10 @@
       <div class="client-logo" style="padding:15px"></div>
       <div class="bg-primary" style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">
         <h3>Summary</h3><br>
-        <p class="lead">Start Time: Fri Jun 19 2020 18:44:56 GMT+0530 (India Standard Time)</p>
-        <p class="lead">Browsers: Chrome 83.0.4103.106 / Windows 10</p>
-        <p class="lead">Duration: 1m 10s</p>
-        <p class="lead">Tests Failed: 0 out of 10</p>
+        <p class="lead">Start Time: Fri Jun 19 2020 19:42:46 GMT+0530 (India Standard Time)</p>
+        <p class="lead">Browsers: Microsoft Edge 18.18363 / Windows 10</p>
+        <p class="lead">Duration: 1m 33s</p>
+        <p class="lead">Tests Failed: 1 out of 10</p>
         <p class="lead">Tests Skipped: 0</p>
       </div><br>
       <table class="table sortable" style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">
@@ -95,55 +95,55 @@
   <td>1</td>
   <td>Create and Select a todo</td>
   <td>create multiple todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>10s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>13s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>2</td>
   <td>Create and Select a todo</td>
   <td>create multiple todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>7s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>9s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>3</td>
   <td>Create and Select a todo</td>
   <td>create multiple todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>16s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>17s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>4</td>
   <td>Create Multiple todo</td>
   <td>Create Multiple todo and delete first one</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>9s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>10s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>5</td>
   <td>Create Multiple todo</td>
   <td>create and delete first todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>5s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>7s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>6</td>
   <td>Create Multiple todo</td>
   <td>Create Mutiple Todo using loop</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>4s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>6s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>7</td>
   <td>Create Multiple todo</td>
   <td>create and verify first todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
   <td>6s</td>
   <td>passed</td>
  </tr>
@@ -151,25 +151,25 @@
   <td>8</td>
   <td>open todomvc react app</td>
   <td>open todomvc app</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>4s</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>5s</td>
   <td>passed</td>
  </tr>
  <tr class="success">
   <td>9</td>
   <td>open todomvc react app</td>
   <td>create and verify first todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
   <td>4s</td>
   <td>passed</td>
  </tr>
- <tr class="success">
+ <tr class="danger">
   <td>10</td>
   <td>update a todomvc</td>
   <td>create, edit and update a todo</td>
-  <td>Chrome 83.0.4103.106 / Windows 10</td>
-  <td>5s</td>
-  <td>passed</td>
+  <td>Microsoft Edge 18.18363 / Windows 10</td>
+  <td>15s</td>
+  <td><a href="#test-10">failed</a></td>
  </tr>
 
         </tbody>
@@ -186,7 +186,26 @@
       </table>
       <br>
       <h3>Error Details</h3>
-      
+       <h4 id="test-10" style="color: red;">10. update a todomvc - create, edit and update a todo</h4>
+ <pre style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">The specified selector does not match any element in the DOM tree.
+
+ &gt; | Selector(&#39;.new-todo&#39;)
+
+Browser: Microsoft Edge 18.18363 / Windows 10
+
+    6 |fixture`update a todomvc`.page`http://todomvc.com/examples/react/#/`
+    7 |
+    8 |test(&#39;create, edit and update a todo&#39;, async t =&gt; &#123
+    9 |  await t.eval(() =&gt; location.reload(true))
+   10 |  await t.maximizeWindow()
+ &gt; 11 |  await t.typeText(mainpage.todoText, &#39;My Todo&#39;, { paste: true, replace: true &#125)
+   12 |  await t.pressKey(&#39;enter&#39;)
+   13 |  await t.expect(mainpage.header.innerText).contains(&#39;React&#39;)
+   14 |  await t.expect(mainpage.createdToDo.innerText).contains(&#39;My Todo&#39;)
+   15 |  await t.hover(mainpage.createdToDo)
+   16 |  await t.doubleClick(mainpage.createdToDo)
+
+   at &lt;anonymous&gt; (E:\TestCafe_Projects\todomvc_testcafe\tests\updateTodo.test.js:11:11) </pre><br>
     </div>
     <script>
       const modal = document.getElementById('myModal');

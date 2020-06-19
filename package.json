@@ -13,7 +13,10 @@
     "test:firefox": "testcafe firefox ./tests -s takeOnFails=true",
     "test:edge": "testcafe edge ./tests -s takeOnFails=true",
     "test:multiple": "testcafe chrome,firefox,edge ./tests -s takeOnFails=true",
-    "test:chrome-html": "testcafe chrome ./tests --reporter html:reports/Test_Result.html"
+    "test:multiple-html": "testcafe chrome,firefox,edge ./tests -s takeOnFails=true --reporter html:reports/Test_Result.html",
+    "test:chrome-html": "testcafe chrome ./tests --reporter html:reports/Test_Result.html",
+    "test:edge-html": "testcafe edge ./tests --reporter html:reports/Test_Result.html",
+    "test:firefox-html": "testcafe firefox ./tests --reporter html:reports/Test_Result.html"
   },
   "keywords": [
     "TestCafe",
