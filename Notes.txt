@@ -1,0 +1,27 @@
+ "reporter": "testcafe-reporter-html",
+ "reporter": "mocha-multi-reporters",
+
+
+ "test:chrome-mocha": "testcafe chrome ./tests --reporter mochawesome:reports/mochawesome.html"
+
+
+    "clean:reports": "rm -R -f newreports && mkdir newreports && mkdir newreports/mochareports",
+    "pretest": "npm run clean:newreports",
+    "scripts": "test:chrome-mocha",
+    "combine-reports": "mochawesome-merge --reportDir newreports/mocha > newreports/mochareports/report.json",
+    "generate-report": "merge newreports/mochareports/report.json -f report -o newreports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test": "npm run scripts || npm run posttest"
+
+
+npm install mocha --save-dev
+npm install mocha-multi-reporters --save-dev
+npm install mochawesome --save-dev
+npm install mochawesome-merge --save-dev
+npm install mochawesome-report-generator --save-dev
+
+mochawesome-merge --reportDir reports/mocha > reports/mochareports/report.json
+merge reports/mochareports/report.json -f report -o reports/mochareports
+
+
+--reporter-options reportDir=reports,reportFilename=mochareport.html

@@ -1,0 +1,34 @@
+{
+  "name": "learn_testcafe",
+  "version": "1.0.0",
+  "description": "Learn TestCafe",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome ./tests ",
+    "test:chrome1": "testcafe chrome ./tests -s takeOnFails=true --disable-page-caching",
+    "test:chrome2": "testcafe chrome ./tests -s takeOnFails=true --reporter list",
+    "test:chrome:5": "testcafe -c 5 chrome ./tests -s takeOnFails=true",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
+    "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./tests -s takeOnFails=true",
+    "test:firefox": "testcafe firefox ./tests -s takeOnFails=true",
+    "test:edge": "testcafe edge ./tests -s takeOnFails=true",
+    "test:multiple": "testcafe chrome,firefox,edge ./tests -s takeOnFails=true",
+    "test:chrome-html": "testcafe chrome ./tests --reporter html:reports/Test_Result.html"
+  },
+  "keywords": [
+    "TestCafe",
+    "Testing",
+    "Automation",
+    "Testing"
+  ],
+  "author": "Nagesh Deshpande",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^1.8.4",
+    "testcafe-reporter-html": "^1.4.6"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "reporter": "testcafe-reporter-html"
+}
