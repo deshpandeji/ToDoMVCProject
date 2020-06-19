@@ -10,7 +10,7 @@ java -jar jenkins.war -httpPort=8080 --enable-future-java
 
  git commit -m "Notes about changes"
 
- git push - origin master
+ git push -u origin master
 
  
 
