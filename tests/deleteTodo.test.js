@@ -14,14 +14,11 @@ test('create and delete first todo', async t => {
   })
   await t.pressKey('enter')
 
-  await t.wait(1000)
   await t
     .expect(mainpage.createdToDo.innerText)
     .contains('This todo will be deleted')
   await t.expect(mainpage.count.innerText).contains('1 item left')
-  await t.wait(1000)
   await t.hover(mainpage.createdToDo)
-  await t.wait(1000)
   await t.expect(mainpage.destroyBtn).ok()
   await t.click(mainpage.destroyBtn)
 })

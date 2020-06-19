@@ -20,6 +20,5 @@ test('create and verify first todo', async t => {
       replace: true,
     })
     await t.pressKey('enter')
-    await t.wait(1000)
   }
 })

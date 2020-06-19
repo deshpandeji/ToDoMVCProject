@@ -5,7 +5,7 @@ const mainpage = new MainPage()
 
 fixture`Create Multiple todo`.page`http://todomvc.com/examples/react/#/`
 
-test.only(`Create Multiple todo and delete first one`, async t => {
+test(`Create Multiple todo and delete first one`, async t => {
   await t.eval(() => location.reload(true))
   await t.maximizeWindow().expect(mainpage.header.innerText).contains('React')
   let str = 'This todo will be deleted '
@@ -24,7 +24,6 @@ test.only(`Create Multiple todo and delete first one`, async t => {
   for (let j = 1; j <= liCount / 2; j++) {
     await t
       .hover(mainpage.listTodo.nth(j))
-      .wait(1000)
       .click(mainpage.listTodo.nth(j))
       .click(mainpage.destroyBtn.nth(j))
   }

@@ -13,7 +13,6 @@ test('create, edit and update a todo', async t => {
   await t.expect(mainpage.header.innerText).contains('React')
   await t.expect(mainpage.createdToDo.innerText).contains('My Todo')
   await t.hover(mainpage.createdToDo)
-  await t.wait(1000)
   await t.doubleClick(mainpage.createdToDo)
   await t.selectText(mainpage.editText)
   await t.typeText(mainpage.editText, 'My Todo Updated', {
